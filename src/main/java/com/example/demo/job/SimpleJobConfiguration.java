@@ -48,7 +48,7 @@ public class SimpleJobConfiguration {
 	public Step simpleStep2(@Value("#{jobParameters[requestDate]}") String requestDate) {
 		return stepBuilderFactory.get("simpleStep2")
 				.tasklet((contribution, chunkContext) -> {
-					log.info(">>>>> This is Step2"); // Batch가 수행되면 This is Step1 출력.
+					log.info(">>>>> This is Step2"); // Batch가 수행되면 This is Step2 출력.
 					log.info(">>>>> requestDate = {}", requestDate); // Job Parameter로 받은 값을 로그에 출력.
 					return RepeatStatus.FINISHED;
 				}).build();
